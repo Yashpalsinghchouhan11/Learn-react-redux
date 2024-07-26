@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task</title>
+</head>
+<body>
+    <input type="text" id="taskInput" placeholder="Enter your task">
+    <button onclick="addTask()">Add Task</button>
+
+    <script>
+        const addTask = () => {
+            const generateUniqueID = () => {
+                return 'ID-' + Math.random().toString(36).substr(2, 9);
+            };
+
+            const task = document.getElementById('taskInput').value;
+            const date = new Date().toISOString();
+
+            const taskObj = {
+                ID: generateUniqueID(),
+                Task: task,
+                Date: date
+            };
+
+            console.log(taskObj);
+        };
+    </script>
+</body>
+</html>
