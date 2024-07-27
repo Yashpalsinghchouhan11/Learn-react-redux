@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useState, useCallback } from "react";
 import TableContent from "./tableContent.jsx";
-import {useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { AddTask } from "../features/taskSlice.js";
 import TaskContext from "./context/useContext.js";
 
@@ -12,7 +12,7 @@ export default function Task() {
 
   // const { taskList, setTaskList } = useContext(TaskContext);
   // const taskList = useSelector((state)=> state.tasks)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleOnTask = (e) => {
     let task = e.target.value;
@@ -39,7 +39,7 @@ export default function Task() {
       Date: date,
       Completed: false,
     };
-    dispatch(AddTask(taskObj))
+    dispatch(AddTask(taskObj));
     setTask("");
     setDate("");
   };
@@ -58,22 +58,24 @@ export default function Task() {
         <input
           type="date"
           value={date}
-          className="p-2 w-8 bg-transparent"
+          className="p-2 w-8 text-black"
           onChange={handleDate}
-          />
+        />
         <button
           className="text-black p-2 mx-4 bg-blue-500 rounded-lg leading-8 outline-gray-50"
           onClick={addTask}
-          >
+        >
           Add Task
         </button>
       </div>
-          {message ? (
-            <span className="text-red-500 flex items-center justify-center">{message}</span>
-          ) : (
-            <br />
-          )}
-          <TableContent />
+      {message ? (
+        <span className="text-red-500 flex items-center justify-center">
+          {message}
+        </span>
+      ) : (
+        <br />
+      )}
+      <TableContent />
       {/* </div> */}
     </>
   );
