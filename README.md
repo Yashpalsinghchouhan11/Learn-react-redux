@@ -26,6 +26,6 @@ Currently, two official plugins are available:
 To get started with this project, clone the repository and install the dependencies:
 
 ```sh
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
+git clone https://github.com/Yashpalsinghchouhan11/Learn-react-redux.git
+cd Learn-react-redux
 npm install

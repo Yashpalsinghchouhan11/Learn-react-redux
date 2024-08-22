@@ -51,18 +51,18 @@ export default function Task() {
         <input
           type="text"
           value={task}
-          className=" px-4 py-2 text-black bg-slate-50 rounded-lg leading-8 border-black border-2 outline-gray-500 placeholder-black"
+          className=" px-4 py-2 text-slate-50 bg-zinc-800 rounded-lg leading-8 border-zinc-500 border-2 outline-zinc-800 placeholder-slate-50"
           placeholder="Write Task..."
           onChange={handleOnTask}
         />
         <input
           type="date"
           value={date}
-          className="p-2 w-8 text-black"
+          className="p-2 w-8 ml-1 bg-zinc-500"
           onChange={handleDate}
         />
         <button
-          className="text-black p-2 mx-4 bg-blue-500 rounded-lg leading-8 outline-gray-50"
+          className="text-slate-50 border-zinc-500 border-2 p-2 mx-4 bg-zinc-800 rounded-lg leading-8 hover:bg-zinc-700"
           onClick={addTask}
         >
           Add Task

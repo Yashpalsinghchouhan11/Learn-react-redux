@@ -72,77 +72,77 @@ export default function TableContent() {
   return (
     <>
       <div className="w-full flex items-center justify-center mt-8">
-        <table className="border-2 border-black">
+        <table className="border-2 border-zinc-500">
           <thead>
-            <tr className="border-2 border-black">
-              <th className="border-2 border-black p-2">ID</th>
-              <th className="border-2 border-black p-2">Task</th>
-              <th className="border-2 border-black p-2">Date</th>
-              <th className="border-2 border-black p-2">Actions</th>
-              <th className="border-2 border-black p-2">Completed</th>
+            <tr className="border-2 border-zinc-500">
+              <th className="border-2 border-zinc-500 text-slate-50 p-2">ID</th>
+              <th className="border-2 border-zinc-500 text-slate-50 p-2">Task</th>
+              <th className="border-2 border-zinc-500 text-slate-50 p-2">Date</th>
+              <th className="border-2 border-zinc-500 text-slate-50 p-2">Actions</th>
+              <th className="border-2 border-zinc-500 text-slate-50 p-2">Completed</th>
             </tr>
           </thead>
           <tbody>
             {taskList.map((task) => (
-              <tr key={task.ID} className="border-2 border-black">
-                <td className="border-2 border-black p-2">{task.ID}</td>
-                <td className="border-2 border-black p-2">
+              <tr key={task.ID} className="border-2 border-zinc-500">
+                <td className="text-slate-50 border-2 border-zinc-500 p-2">{task.ID}</td>
+                <td className="border-2 border-zinc-500 p-2">
                   <input
                     type="text"
                     value={editTask[task.ID] !== undefined ? editTask[task.ID] : task.Task}
-                    className="text-black border-black p-2 rounded-lg mr-2"
+                    className="p-2 mr-2 text-slate-50 bg-zinc-800 rounded-lg leading-8 border-zinc-500 border-2 outline-zinc-800 placeholder-slate-50"
                     onChange={(e) => handleEdit(e, task.ID)}
                     // onKeyPress={(e) => handleKeyPress(e, task.ID)}
                     ref={(el) => (editInputRefs.current[task.ID] = el)}
                   />
                   <button
-                      className="text-black p-2 mx-2 rounded-lg bg-blue-500"
+                      className="text-slate-50 border-zinc-500 border-2 p-2 mx-2 bg-zinc-800 rounded-lg hover:bg-zinc-700"
                       onClick={() => handleEditClicked(task.ID)}
                     >
                       Edit
                     </button>
                   <button
-                      className="text-black p-2 rounded-lg bg-blue-500"
+                      className="text-slate-50 border-zinc-500 border-2 p-2 mx-2 bg-zinc-800 rounded-lg hover:bg-zinc-700"
                       onClick={() => handleSaveClicked(task.ID)}
                     >
                       Save
                     </button>
                 </td>
-                <td className="border-2 border-black p-2"><input
+                <td className="border-2 border-zinc-500 p-2"><input
                     type="date"
                     value={editDate[task.ID] !== undefined ? editDate[task.ID] : task.Date}
-                    className="text-black border-black p-2 rounded-lg mr-2"
+                    className="p-2 mr-2 text-slate-50 bg-zinc-800 rounded-lg leading-8 border-zinc-500 border-2 outline-zinc-800 placeholder-slate-50"
                     onChange={(e) => handleDateEdit(e, task.ID)}
                     // onKeyPress={(e) => handleKeyPress(e, task.ID)}
                     ref={(el) => (editDateInputRefs.current[task.ID] = el)}
                   />
                 <button
-                      className="text-black p-2 mx-2 rounded-lg bg-blue-500"
+                      className="text-slate-50 border-zinc-500 border-2 p-2 mx-2 bg-zinc-800 rounded-lg hover:bg-zinc-700"
                       onClick={() => handleDateEditClicked(task.ID)}
                     >
                       Edit
                     </button>
                   <button
-                      className="text-black p-2 rounded-lg bg-blue-500"
+                      className="text-slate-50 border-zinc-500 border-2 p-2 mx-2 bg-zinc-800 rounded-lg hover:bg-zinc-700"
                       onClick={() => handleDateSaveClicked(task.ID)}
                     >
                       Save
                     </button>
                 </td>
-                <td className="border-2 border-black p-2">
+                <td className="border-2 border-zinc-500 p-2">
                   <button
-                    className="text-black p-2 bg-blue-500 rounded-lg leading-8 outline-gray-50"
+                    className="text-slate-50 border-zinc-500 border-2 p-2 mx-2 bg-zinc-800 rounded-lg hover:bg-zinc-700"
                     value={task.ID}
                     onClick={handleRemove}
                   >
                     Delete
                   </button>
                 </td>
-                <td className="border-2 border-black p-2">
+                <td className="border-2 border-zinc-500 p-2 ">
                   <input
                     type="checkbox"
                     onChange={handleChecked}
-                    className="text-black p-2 size-4 bg-blue-500 rounded-lg leading-8 outline-gray-50"
+                    className="text-slate-50 p-2 size-4 bg-zinc-800 rounded-lg"
                     value={task.ID}
                     checked={task.Completed}
                   />
